@@ -1,5 +1,0 @@
-  [phases.setup]
-  nixPkgs = ["python3", "ffmpeg"]
-
-  [start]
-  cmd = "gunicorn --bind 0.0.0.0:$PORT --timeout 600 --workers 2 app:app"
