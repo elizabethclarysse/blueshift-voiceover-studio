@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: voice-replacement-tool
+    env: python
+    region: oregon
+    plan: starter
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn --bind 0.0.0.0:$PORT --timeout 600 --workers 2 app:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ELEVENLABS_API_KEY
+        sync: false
+    disk:
+      name: voice-tool-storage
+      mountPath: /opt/render/project/src/uploads
+      sizeGB: 10

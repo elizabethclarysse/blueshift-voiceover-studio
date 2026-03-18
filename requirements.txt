@@ -1,0 +1,16 @@
+Flask>=3.0.0
+openai>=1.12.0
+openai-whisper>=20231117
+requests>=2.31.0
+Werkzeug>=3.0.0
+gunicorn>=21.2.0
+python-dotenv>=1.0.0
+
+# Optional for faster processing
+# torch>=2.0.0
+# torchaudio>=2.0.0
+
+# Note: FFmpeg must be installed separately on your system
+# macOS: brew install ffmpeg
+# Ubuntu/Debian: sudo apt-get install ffmpeg
+# Windows: Download from https://ffmpeg.org/download.html
