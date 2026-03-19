@@ -1,0 +1,8 @@
+  [build]
+  builder = "nixpacks"
+
+  [build.nixpacksPlan.phases.setup]
+  nixPkgs = ["python39", "ffmpeg-full"]
+
+  [deploy]
+  startCommand = "gunicorn --bind 0.0.0.0:$PORT --timeout 600 --workers 2 app:app"
